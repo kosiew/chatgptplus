@@ -38,12 +38,7 @@
 
   const continueObserver = new MutationObserver((mutations) => {
     const sendButton = chatgpt.getSendButton();
-    if (sendButton) {
-      console.log(
-        `%c👀  ==> [sendButton.disabled: ${sendButton.disabled} ] 👀`,
-        "background-color: #0595DE; color: yellow; padding: 8px; border-radius: 4px;",
-        { sendButton }
-      );
+    if (sendButton && sendButton.disabled) {
       chatgpt.getLastPrompt().then((prompt) => {
         console.log(
           `%c==> [getLstPrompt: ${prompt}]`,
