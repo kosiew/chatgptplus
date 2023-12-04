@@ -40,10 +40,6 @@
     const sendButton = chatgpt.getSendButton();
     if (sendButton && sendButton.disabled) {
       chatgpt.getLastPrompt().then((prompt) => {
-        console.log(
-          `%c==> [getLstPrompt: ${prompt}]`,
-          "background-color: #0595DE; color: yellow; padding: 8px; border-radius: 4px;"
-        );
         if (prompt) {
           updatePrompts(prompt);
         }
@@ -58,10 +54,6 @@
   // if prompt.trim() is not in prompts (case insensitive), add it
   // if prompt.trim() is in prompts (case insensitive), move it to the end
   function updatePrompts(prompt) {
-    console.log(
-      `%c==> [updatePrompts: ${prompt}]`,
-      "background-color: #0595DE; color: yellow; padding: 8px; border-radius: 4px;"
-    );
     const index = prompts.findIndex(
       (p) => p.toLowerCase().trim() === prompt.toLowerCase().trim()
     );
