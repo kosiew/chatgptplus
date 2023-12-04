@@ -37,12 +37,12 @@
   say("chatgpt plus is loaded!");
 
   const continueObserver = new MutationObserver((mutations) => {
-    const stopButton = chatgpt.getStopGeneratingButton();
-    if (stopButton) {
+    const sendButton = chatgpt.getSendButton();
+    if (sendButton) {
       console.log(
-        `%c👀  ==> [sendButton.disabled: ${stopButton.disabled} ] 👀`,
+        `%c👀  ==> [sendButton.disabled: ${sendButton.disabled} ] 👀`,
         "background-color: #0595DE; color: yellow; padding: 8px; border-radius: 4px;",
-        { stopButton: stopButton }
+        { sendButton }
       );
       chatgpt.getLastPrompt().then((prompt) => {
         console.log(
